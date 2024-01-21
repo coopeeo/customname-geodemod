@@ -8,7 +8,7 @@ class $modify(MenuLayer) {
 		if(!MenuLayer::init())
 			return false;
     
-    		this->getChildByID("player-username")->setString();
+    		static_cast<CCLabelBMFont>(this->getChildByID("player-username"))->setString();
 		
 		
 		return true;
