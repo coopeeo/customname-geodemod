@@ -8,7 +8,8 @@ class $modify(MenuLayer) {
 		if(!MenuLayer::init())
 			return false;
     
-    this->getChildByID("player-username")::setString("hello");
+    		this->getChildByID("player-username")->setString();
+		
 		
 		return true;
 	}
