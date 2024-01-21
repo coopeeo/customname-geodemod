@@ -1,0 +1,24 @@
+{
+  "geode": "v2.0.0",
+  "gd": {
+    "android": "2.200",
+    "win": "2.204"
+  },
+  "id": "coopeeo.customname",
+  "name": "Custom Names",
+  "version": "1.0.0",
+  "developer": "coopeeo",
+  "repository": "coopeeo/customname-geodemod",
+  "description": "Make yourself have your own name. (Only appears for yourself)",
+  "issues": {
+    "info": "GitHub",
+    "url": "https://github.com/coopeeo/customname-geodemod/issues"
+  },
+  "settings": {
+    "thename": {
+      "name": "Change Name",
+      "description": "Changes your name to what you type into the text box.",
+      "type": "string"
+    }
+  }
+}
