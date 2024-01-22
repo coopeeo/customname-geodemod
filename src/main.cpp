@@ -7,8 +7,9 @@ class $modify(MenuLayer) {
 	bool init() {
 		if(!MenuLayer::init())
 			return false;
-    
-    		static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("player-username"))->setString("goofy ahh test");
+
+		auto value = Mod::get()->getSettingValue<std::string>("thename");
+    		static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("player-username"))->setString(value);
 		
 		
 		return true;
