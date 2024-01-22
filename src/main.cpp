@@ -8,7 +8,7 @@ class $modify(MenuLayer) {
 		if(!MenuLayer::init())
 			return false;
     
-    		static_cast<cocos2d::CCLabelBMFont>(this->getChildByID("player-username"))->setString();
+    		static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("player-username"))->setString();
 		
 		
 		return true;
