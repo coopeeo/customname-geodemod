@@ -1,4 +1,6 @@
 # Changelog
+## 1.0.1
+- fix logo :)
 ## 1.0.0
 - just bump version to 1.0.0
 ## 1.0.0-alpha.2
