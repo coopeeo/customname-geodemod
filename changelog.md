@@ -1,4 +1,6 @@
 # Changelog
+## 1.0.0
+- just bump version to 1.0.0
 ## 1.0.0-alpha.2
 - setting should worky now
 ## 1.0.0-alpha.1
