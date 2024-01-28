@@ -21,7 +21,10 @@ class $modify(ProfilePage) {
 			auto value = Mod::get()->getSettingValue<std::string>("thename");
     		m_usernameLabel->setString(value.c_str());
 			if (Loader::get()->isModLoaded("cvolton.betterinfo")) {
-				static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("cvolton.betterinfo/username-button")->getChildByTag(1))->setString(value.c_str()); //honestly i have no clue lol
+				// static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("cvolton.betterinfo/username-button")->getChildByTag(1))->setString(value.c_str()); //honestly i have no clue lol
+				CCARRAY_FOREACH(this->getChildByID("cvolton.betterinfo/username-button"), node){
+					static_cast<cocos2d::CCLabelBMFont*>(node)->setString(value.c_str());
+				}
 			}
 		}
 		
