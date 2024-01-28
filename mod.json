@@ -20,5 +20,12 @@
       "description": "Changes your name to what you type into the text box.",
       "type": "string"
     }
-  }
+  },
+  "dependencies": [
+    {
+        "id": "geode.node-ids",
+        "version": ">=v1.1.4",
+        "importance": "required"
+    }
+]
 }
