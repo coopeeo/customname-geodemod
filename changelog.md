@@ -1,6 +1,6 @@
 # Changelog
 ## 1.1.2
-- Fix crashing with BetterInfo
+- Fix crashing with BetterInfo (that took me nine hours of pain now enjoy it)
 ## 1.1.1
 - Add support for BetterInfo
 - Replace "Streamer" text no matter if the "Hide Real Username" setting is on or off (in the BetterMenu mod)

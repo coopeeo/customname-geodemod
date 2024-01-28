@@ -8,7 +8,21 @@ class $modify(ProfilePage) {
 	static void onModify(auto& self) {
         self.setHookPriority("ProfilePage::loadPageFromUserInfo", -1);
     }
-    // TODO: add non betterinfo way back later
+
+	// Non-BetterInfo way
+	bool init(int accountID, bool ownProfile) {
+        if (!ProfilePage::init(accountID, ownProfile)) return false;
+
+		if (ownProfile)
+		{
+			auto value = Mod::get()->getSettingValue<std::string>("thename");
+    		m_usernameLabel->setString(value.c_str());
+		}
+
+		return true;
+	}
+	
+    // BetterInfo way
     void loadPageFromUserInfo(GJUserScore* user) {
 		ProfilePage::loadPageFromUserInfo(user);
 
