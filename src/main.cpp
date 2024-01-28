@@ -6,7 +6,7 @@ using namespace geode::prelude;
 
 class $modify(MenuLayer) {
 	static void onModify(auto& self) {
-        self.setHookPriority("MenuLayer::init", -2); // try to fix with better menu
+        self.setHookPriority("MenuLayer::init", -2); // try to fix with BetterMenu
     }
     
 	bool init() {

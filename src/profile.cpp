@@ -7,6 +7,12 @@ static geode::Loader* get();
 using namespace geode::prelude;
 
 class $modify(ProfilePage) {
+	static void onModify(auto& self) {
+        if (Loader::get()->isModLoaded("cvolton.betterinfo")) {
+			self.setHookPriority("MenuLayer::init", -2); // try to fix with BetterInfo
+    	}
+	}
+
 	 bool init(int accountID, bool ownProfile) {
         if (!ProfilePage::init(accountID, ownProfile)) return false;
 
