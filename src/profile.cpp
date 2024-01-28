@@ -11,7 +11,7 @@ class $modify(ProfilePage) {
 
 		auto value = Mod::get()->getSettingValue<std::string>("thename");
 		if (Loader::get()->isModLoaded("cvolton.betterinfo")) {
-			static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("cvolton.betterinfo/username-button")->getChildren()->objectAtIndex(0))->setString(value.c_str());
+			static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("cvolton.betterinfo/username-button")->getChildren()->objectAtIndex(1))->setString(value.c_str());
 		};
     };
 };
