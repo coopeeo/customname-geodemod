@@ -10,7 +10,7 @@ class $modify(ProfilePage) {
 	}*/
 
 	 void loadPageFromUserInfo(GJUserScore* user) {
-        if (!ProfilePage::loadPageFromUserInfo(user)) return false;
+        //if (!ProfilePage::loadPageFromUserInfo(user)) return false;
 
 			auto value = Mod::get()->getSettingValue<std::string>("thename");
     		// m_usernameLabel->setString(value.c_str());
