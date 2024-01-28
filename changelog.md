@@ -1,5 +1,7 @@
 # Changelog
-## 1.0.1
+## 1.1.0
+- Make it work on profiles! (thanks to Uproxide)
+## 1.0.2
 - bump gd version for android
 ## 1.0.1
 - fix logo :)
@@ -9,4 +11,4 @@
 - setting should worky now
 ## 1.0.0-alpha.1
 - add setting (but it no worky)
-- change username to goofy ahh test on play screen (for test)
+- change username to "goofy ahh test" on play screen (for test)
