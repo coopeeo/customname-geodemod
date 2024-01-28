@@ -1,4 +1,6 @@
 # Changelog
+## 1.1.3
+- stuff
 ## 1.1.2
 - Fix crashing with BetterInfo (that took me nine hours of pain now enjoy it)
 ## 1.1.1
