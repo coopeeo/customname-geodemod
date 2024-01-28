@@ -8,9 +8,7 @@ using namespace geode::prelude;
 
 class $modify(ProfilePage) {
 	static void onModify(auto& self) {
-        if (Loader::get()->isModLoaded("cvolton.betterinfo")) {
 			self.setHookPriority("ProfilePage::init", -1); // try to fix with BetterInfo
-    	}
 	}
 
 	 bool init(int accountID, bool ownProfile) {
