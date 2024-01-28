@@ -22,10 +22,9 @@ class $modify(ProfilePage) {
     		m_usernameLabel->setString(value.c_str());
 			if (Loader::get()->isModLoaded("cvolton.betterinfo")) {
 				// static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("cvolton.betterinfo/username-button")->getChildByTag(1))->setString(value.c_str()); //honestly i have no clue lol
-				CCNode* node = NULL;
-				CCARRAY_FOREACH(this->getChildByID("cvolton.betterinfo/username-button"), node){
-					static_cast<cocos2d::CCLabelBMFont*>(node)->setString(value.c_str());
-				}
+				for (CCNode* node : this->getChildByID("cvolton.betterinfo/username-button")::getChildren()) {
+        			static_cast<cocos2d::CCLabelBMFont*>(node)->setString(value.c_str());
+    			}
 			}
 		}
 		
