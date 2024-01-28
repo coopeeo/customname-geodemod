@@ -5,6 +5,9 @@
 using namespace geode::prelude;
 
 class $modify(ProfilePage) {
+	static void onModify(auto& self) {
+        self.setHookPriority("ProfilePage::loadPageFromUserInfo", -1);
+    }
     // TODO: add non betterinfo way back later
     void loadPageFromUserInfo(GJUserScore* user) {
 		ProfilePage::loadPageFromUserInfo(user);
