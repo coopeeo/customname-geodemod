@@ -1,4 +1,7 @@
 # Changelog
+## 1.1.4
+- Make Kot/Uproxide a developer!
+- target geode v2 beta 14 and up
 ## 1.1.3
 - stuff
 ## 1.1.2
