@@ -6,11 +6,10 @@
   },
   "id": "coopeeo.customname",
   "name": "Custom Name",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "developers": [
     "Coop",
-    "Uproxide",
-    "Carrot Devs"
+    "Uproxide"
   ],
   "repository": "https://github.com/coopeeo/customname-geodemod",
   "description": "Make yourself have your own name. (Only appears for yourself)",
