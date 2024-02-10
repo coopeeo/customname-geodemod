@@ -1,5 +1,7 @@
 # Changelog
 ## 1.1.5
+* MAC SUPPORT
+## 1.1.5
 * same stuff as 1.1.4
 ## 1.1.4
 * Make Kot/Uproxide a developer!
