@@ -1,5 +1,5 @@
 # Changelog
-## 1.1.5
+## 1.2.0
 * MAC SUPPORT
 ## 1.1.5
 * same stuff as 1.1.4
