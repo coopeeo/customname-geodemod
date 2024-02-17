@@ -16,14 +16,14 @@ class $modify(LevelBrowserLayer) {
         log::debug("loaded!!!!!!!!!!!!!!!!!!!!!");
         
         // auto theContent = p0;
-        auto theContent = this->m_list;
-        //auto theContent = static_cast<CustomListView*>(theContent3->getChildren()->objectAtIndex(0));
+        //auto theContent = this->m_list;
+        auto theContent = static_cast<CustomListView*>(theContent3->getChildren()->objectAtIndex(0));
         //auto theContent = theContent2->getChildren()->objectAtIndex(0);
         //auto theContent = static_cast<cocos2d::CCNode*>(theContent1->getChildren()->objectAtIndex(0));
         log::debug("gonna do some shit {} times",theContent->getChildrenCount());
         cocos2d::CCArray* theContentChildren = theContent->getChildren();
-        cocos2d::CCObject* thefakeobj = nullptr;
-        CCARRAY_FOREACH(theContentChildren, thefakeobj)
+        //cocos2d::CCObject* thefakeobj = nullptr;
+        for(CCNode* thefakeobj : theContentChildren)
         {
             //std::string ee(i);
             log::debug("did it");
