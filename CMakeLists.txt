@@ -10,6 +10,7 @@ add_library(${PROJECT_NAME} SHARED
     src/main.cpp
     src/profile.cpp
     src/levelinfo.cpp
+    src/levelbrowser.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
