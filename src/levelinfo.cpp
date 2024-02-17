@@ -28,8 +28,8 @@ class $modify(LevelInfoLayer) {
         }
 
 		auto value = Mod::get()->getSettingValue<std::string>("thename");
-        
-        obj->setString(value.c_str());
+
+        obj->setString(fmt::format("By {}", value).c_str());
 		
 		return true;
 	}
