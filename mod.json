@@ -1,5 +1,5 @@
 {
-  "geode": "v2.0.0-beta.17",
+  "geode": "v2.0.0-beta.20",
   "gd": {
     "android": "2.205",
     "win": "2.204",
@@ -7,7 +7,7 @@
   },
   "id": "coopeeo.customname",
   "name": "Custom Name",
-  "version": "1.2.2",
+  "version": "1.3.0-beta.1",
   "developers": [
     "Coop",
     "Uproxide"
