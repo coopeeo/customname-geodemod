@@ -14,8 +14,8 @@ class $modify(LevelInfoLayer) {
     
     
 
-	bool init(GJGameLevel* level, bool* p1) {
-		if(!LevelInfoLayer::init(level, p1))
+	bool init(GJGameLevel* p0, bool p1) {
+		if(!LevelInfoLayer::init(p0, p1))
 			return false;
         
         auto obj = static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("player-username")->getChildByID("player-username")->getChildren()->objectAtIndex(0));
