@@ -5,14 +5,6 @@
 using namespace geode::prelude;
 
 class $modify(LevelInfoLayer) {
-	/*static void onModify(auto& self) {
-        self.setHookPriority("MenuLayer::init", -2); // try to fix with BetterMenu
-    }*/
-    // creator info menu
-    // creator name
-    // then in that is a CCLabelBMFont
-    
-    
 
 	bool init(GJGameLevel* p0, bool p1) {
 		if(!LevelInfoLayer::init(p0, p1))
@@ -23,7 +15,6 @@ class $modify(LevelInfoLayer) {
         auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
 
         if(static_cast<std::string>(GJAccountManager::get()->m_username) != objString.substr(3,-1)) {
-            log::info("didnt pass username check");
             return true;
         }
 
