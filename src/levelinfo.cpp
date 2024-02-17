@@ -15,24 +15,21 @@ class $modify(LevelInfoLayer) {
     
 
 	bool init(GJGameLevel* p0, bool p1) {
-        log::info("init called!");
 		if(!LevelInfoLayer::init(p0, p1))
 			return false;
         
         auto obj = static_cast<cocos2d::CCLabelBMFont*>(this->getChildByID("creator-info-menu")->getChildByID("creator-name")->getChildren()->objectAtIndex(0));
         std::string objString(obj->getString());
         auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
-        // log for debug
-        log::info("Username of Level Creator is: [start]{}[end]", objString.substr(3,-1));
-        log::info("Username of Current Account is: [start]{}[end]", accountname);
 
-        if(static_cast<std::string>(GJAccountManager::get()->m_username) != objString.substr(3,-1)) 
+        if(static_cast<std::string>(GJAccountManager::get()->m_username) != objString.substr(3,-1)) {
             log::info("didnt pass username check");
             return true;
+        }
 
 		auto value = Mod::get()->getSettingValue<std::string>("thename");
         
-    	log::info("passed username check!");
+        obj->setString(value.c_str());
 		
 		return true;
 	}
