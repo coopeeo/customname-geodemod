@@ -8,8 +8,8 @@ class $modify(LevelBrowserLayer) {
     
     
 
-	void show(cocos2d::CCArray* p0,const char* p1, int p2) {
-	    LevelBrowserLayer::show(p0, p1, p2);
+	void show() {
+	    LevelBrowserLayer::show();
         
         // auto theContent = p0;
         auto theContent3 = static_cast<cocos2d::CCNode*>(this->getChildren()->objectAtIndex(2));
