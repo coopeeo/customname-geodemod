@@ -16,19 +16,17 @@ class $modify(LevelBrowserLayer) {
         log::debug("loaded!!!!!!!!!!!!!!!!!!!!!");
         
         // auto theContent = p0;
-        //auto theContent = this->m_list;
-        auto theContent = static_cast<CustomListView*>(theContent3->getChildren()->objectAtIndex(0));
-        //auto theContent = theContent2->getChildren()->objectAtIndex(0);
+        auto theContent3 = this->m_list;
+        auto theContent2 = static_cast<CustomListView*>(this->m_list->getChildren()->objectAtIndex(0));
+        auto theContent = theContent2->getChildren()->objectAtIndex(0);
         //auto theContent = static_cast<cocos2d::CCNode*>(theContent1->getChildren()->objectAtIndex(0));
-        log::debug("gonna do some shit {} times",theContent->getChildrenCount());
-        cocos2d::CCArray* theContentChildren = theContent->getChildren();
-        //cocos2d::CCObject* thefakeobj = nullptr;
-        for(CCNode* thefakeobj : theContentChildren)
+        CCArray* theContentChildren = static_cast<CCNode*>(theContent)->getChildren();
+        log::debug("gonna do some shit {} times",static_cast<CCNode*>(theContent)->getChildrenCount());
+        for (size_t i = 0; i < static_cast<CCNode*>(theContent)->getChildrenCount(); i++)
         {
             //std::string ee(i);
-            log::debug("did it");
-            auto mainObj = static_cast<cocos2d::CCNode*>(thefakeobj)->getChildByID("main-layer");
-            //auto mainObj = thefakeobj->getChildByID("main-layer");
+            log::debug("did it ({})",i);
+            auto mainObj = static_cast<CCNode*>(theContentChildren->objectAtIndex(i))->getChildByID("main-layer");
 
             auto creatorname = mainObj->getChildByID("main-menu")->getChildByID("creator-name");
             if (creatorname != nullptr) {
