@@ -17,8 +17,8 @@ class $modify(LevelBrowserLayer) {
         
         // auto theContent = p0;
         auto theContent3 = this->m_list;
-        auto theContent2 = static_cast<cocos2d::CCNode*>(this->m_list->getChildren()->objectAtIndex(0));
-        auto theContent = theContent2->getChildren()->objectAtIndex(0);
+        auto theContent = static_cast<cocos2d::CCNode*>(static_cast<cocos2d::CCNode*>(this->m_list->getChildren()->objectAtIndex(0))->getChildren()->objectAtIndex(0));
+        //auto theContent = theContent2->getChildren()->objectAtIndex(0);
         //auto theContent = static_cast<cocos2d::CCNode*>(theContent1->getChildren()->objectAtIndex(0));
         CCArray* theContentChildren = static_cast<CCNode*>(theContent)->getChildren();
         log::debug("gonna do some shit {} times",static_cast<CCNode*>(theContent)->getChildrenCount());
