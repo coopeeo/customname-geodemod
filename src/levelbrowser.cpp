@@ -9,10 +9,10 @@ class $modify(LevelBrowserLayer) {
         self.setHookPriority("LevelBrowserLayer::updateLevelsLabel", -2);
     }*/
 
-    void updateLevelsLabel() {
-		//if(!LevelBrowserLayer::init(p0))
-			//return false;
-        LevelBrowserLayer::updateLevelsLabel();
+    void init(GJSearchObject* p0) {
+		if(!LevelBrowserLayer::init(p0))
+			return false;
+        //LevelBrowserLayer::updateLevelsLabel();
         log::debug("loaded!!!!!!!!!!!!!!!!!!!!!");
         
         // auto theContent = p0;
@@ -43,6 +43,6 @@ class $modify(LevelBrowserLayer) {
             }
             
         }
-        //return true;
+        return true;
 	}
 };
