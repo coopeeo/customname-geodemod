@@ -26,7 +26,7 @@ class $modify(LevelInfoLayer) {
         log::info("Username of Level Creator is: [start]{}[end]", objString.substr(3,-1));
         log::info("Username of Current Account is: [start]{}[end]", accountname);
 
-        if(static_cast<std::string>(GJAccountManager::get()->m_username) != objString.substr(0,3)) 
+        if(static_cast<std::string>(GJAccountManager::get()->m_username) != objString.substr(3,-1)) 
             log::info("didnt pass username check");
             return true;
 
