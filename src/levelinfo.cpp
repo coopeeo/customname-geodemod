@@ -15,6 +15,7 @@ class $modify(LevelInfoLayer) {
     
 
 	bool init(GJGameLevel* p0, bool p1) {
+        log::info("init called!");
 		if(!LevelInfoLayer::init(p0, p1))
 			return false;
         
