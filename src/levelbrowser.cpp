@@ -13,10 +13,10 @@ class $modify(LevelBrowserLayer) {
 			return false;
         
         // auto theContent = p0;
-        auto theContent3 = static_cast<cocos2d::CCNode*>(this->getChildren()->objectAtIndex(2));
-        auto theContent2 = static_cast<cocos2d::CCNode*>(theContent3->getChildren()->objectAtIndex(0));
-        auto theContent1 = static_cast<cocos2d::CCNode*>(theContent2->getChildren()->objectAtIndex(0));
-        auto theContent = static_cast<cocos2d::CCNode*>(theContent1->getChildren()->objectAtIndex(0));
+        auto theContent3 = dynamic_cast<CCNode*>(this->getChildren()->objectAtIndex(2));
+        auto theContent2 = dynamic_cast<CCNode*>(theContent3->getChildren()->objectAtIndex(0));
+        auto theContent1 = dynamic_cast<CCNode*>(theContent2->getChildren()->objectAtIndex(0));
+        auto theContent = dynamic_cast<CCNode*>(theContent1->getChildren()->objectAtIndex(0));
         auto theContentChildren = theContent->getChildren();
         for (size_t i = 0; i < theContent->getChildrenCount(); i++)
         {
