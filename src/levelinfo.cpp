@@ -23,7 +23,7 @@ class $modify(LevelInfoLayer) {
         std::string objString(obj->getString());
         
         // log for debug
-        log::info("Username of Level Creator is: {}", objString.substr(0,3));
+        log::info("Username of Level Creator is: {}[end]", objString.substr(0,3));
 
         if(static_cast<std::string>(GJAccountManager::get()->m_username) != objString.substr(0,3)) 
             return true;
