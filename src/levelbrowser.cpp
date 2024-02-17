@@ -8,16 +8,16 @@ class $modify(LevelBrowserLayer) {
     
     
 
-	void loadLevelsFinished(cocos2d::CCArray* p0,const char* p1, int p2) {
-	    LevelBrowserLayer::loadLevelsFinished(p0, p1, p2);
+	void show(cocos2d::CCArray* p0,const char* p1, int p2) {
+	    LevelBrowserLayer::show(p0, p1, p2);
         
-        auto theContent = p0;
-        // auto theContent3 = static_cast<cocos2d::CCNode*>(this->getChildren()->objectAtIndex(2));
-        // auto theContent2 = static_cast<cocos2d::CCNode*>(theContent3->getChildren()->objectAtIndex(0));
-        // auto theContent1 = static_cast<cocos2d::CCNode*>(theContent2->getChildren()->objectAtIndex(0));
-        // auto theContent = static_cast<cocos2d::CCNode*>(theContent1->getChildren()->objectAtIndex(0));
-        auto theContentChildren = p0;
-        for (size_t i = 0; i < theContentChildren->count(); i++)
+        // auto theContent = p0;
+        auto theContent3 = static_cast<cocos2d::CCNode*>(this->getChildren()->objectAtIndex(2));
+        auto theContent2 = static_cast<cocos2d::CCNode*>(theContent3->getChildren()->objectAtIndex(0));
+        auto theContent1 = static_cast<cocos2d::CCNode*>(theContent2->getChildren()->objectAtIndex(0));
+        auto theContent = static_cast<cocos2d::CCNode*>(theContent1->getChildren()->objectAtIndex(0));
+        auto theContentChildren = theContent->getChildren();
+        for (size_t i = 0; i < theContent->getChildrenCount(); i++)
         {
             auto mainObj = static_cast<CCNode*>(theContentChildren->objectAtIndex(i))->getChildByID("main-layer");
 
