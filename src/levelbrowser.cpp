@@ -8,8 +8,9 @@ class $modify(LevelBrowserLayer) {
     
     
 
-	void show() {
-	    LevelBrowserLayer::show();
+    bool init(GJSearchObject* p0) {
+		if(!LevelBrowserLayer::init(p0))
+			return false;
         
         // auto theContent = p0;
         auto theContent3 = static_cast<cocos2d::CCNode*>(this->getChildren()->objectAtIndex(2));
