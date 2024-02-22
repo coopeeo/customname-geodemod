@@ -15,11 +15,11 @@ class $modify(LevelCell) {
         
         
         auto mainObj = this->getChildByID("main-layer");
-        if (mainObj == nullptr) {log::error("Failed to move on because \"main-layer\" doesnt exist LevelCell"); return;}
+        if (mainObj == nullptr) {log::warn("Failed to move on because \"main-layer\" doesnt exist LevelCell"); return;}
         auto menuStuff = mainObj->getChildByID("main-menu");
-        if (menuStuff == nullptr) {log::error("Failed to move on because \"main-menu\" doesnt exist in \"main-layer\" -> LevelCell"); return;}
+        if (menuStuff == nullptr) {log::warn("Failed to move on because \"main-menu\" doesnt exist in \"main-layer\" -> LevelCell"); return;}
         auto creatorname = menuStuff->getChildByID("creator-name");
-        if (creatorname == nullptr) {log::error("Failed to move on because \"creator-name\" doesnt exist in \"main-menu\" -> \"main-layer\" -> LevelCell"); return;}
+        if (creatorname == nullptr) {log::warn("Failed to move on because \"creator-name\" doesnt exist in \"main-menu\" -> \"main-layer\" -> LevelCell"); return;}
         else {
             auto obj = static_cast<cocos2d::CCLabelBMFont*>(creatorname->getChildren()->objectAtIndex(0));
             std::string objString(obj->getString());

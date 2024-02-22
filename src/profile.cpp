@@ -14,7 +14,11 @@ class $modify(ProfilePage) {
         if (!ProfilePage::init(accountID, ownProfile)) return false;
         log::debug("loadPageFromUserInfo() function called! Running Custom Name!");
 
-        if (ownProfile && !Loader::get()->isModLoaded("cvolton.betterinfo"))
+        auto isOwnProfile = (ownProfile||GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
+
+        log::debug("Users Own Profile: {}", isOwnProfile);
+
+        if (isOwnProfile && !Loader::get()->isModLoaded("cvolton.betterinfo"))
         {
             auto value = Mod::get()->getSettingValue<std::string>("thename");
             m_usernameLabel->setString(value.c_str());
@@ -26,10 +30,14 @@ class $modify(ProfilePage) {
     // BetterInfo way
     void loadPageFromUserInfo(GJUserScore* user) {
         ProfilePage::loadPageFromUserInfo(user);
-        log::debug("loadPageFromUserInfo() function called! Running Custom Name!");
+        log::debug("loadPageFromUserInfo() function called! Running Custom Name! (this gets called multiple times)");
+
+        auto isOwnProfile = (m_ownProfile||GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
+
+        log::debug("Users Own Profile: {}", isOwnProfile);
 
 		auto value = Mod::get()->getSettingValue<std::string>("thename");
-		if (Loader::get()->isModLoaded("cvolton.betterinfo") && m_ownProfile) {
+		if (Loader::get()->isModLoaded("cvolton.betterinfo") && isOwnProfile) {
 			static_cast<cocos2d::CCLabelBMFont*>(this->getChildByIDRecursive("main-menu")->getChildByID("cvolton.betterinfo/username-button")->getChildren()->objectAtIndex(0))->setString(value.c_str());
 		};
     };
