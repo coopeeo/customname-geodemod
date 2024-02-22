@@ -12,6 +12,7 @@ class $modify(ProfilePage) {
     // Non-BetterInfo way
     bool init(int accountID, bool ownProfile) {
         if (!ProfilePage::init(accountID, ownProfile)) return false;
+        log::debug("loadPageFromUserInfo() function called! Running Custom Name!");
 
         if (ownProfile && !Loader::get()->isModLoaded("cvolton.betterinfo"))
         {
@@ -25,6 +26,7 @@ class $modify(ProfilePage) {
     // BetterInfo way
     void loadPageFromUserInfo(GJUserScore* user) {
         ProfilePage::loadPageFromUserInfo(user);
+        log::debug("loadPageFromUserInfo() function called! Running Custom Name!");
 
 		auto value = Mod::get()->getSettingValue<std::string>("thename");
 		if (Loader::get()->isModLoaded("cvolton.betterinfo") && m_ownProfile) {

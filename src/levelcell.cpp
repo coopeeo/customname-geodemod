@@ -11,23 +11,32 @@ class $modify(LevelCell) {
 
     void loadCustomLevelCell() {
         LevelCell::loadCustomLevelCell();
-        log::debug("loaded!!!!!!!!!!!!!!!!!!!!!");
+        log::debug("loadCustomLevelCell() function called! Running Custom Name!");
         
         
         auto mainObj = this->getChildByID("main-layer");
-
-        auto creatorname = mainObj->getChildByID("main-menu")->getChildByID("creator-name");
-        if (creatorname != nullptr) {
+        if (mainObj == nullptr) {log::error("Failed to move on because \"main-layer\" doesnt exist LevelCell"); return;}
+        auto menuStuff = mainObj->getChildByID("main-menu");
+        if (menuStuff == nullptr) {log::error("Failed to move on because \"main-menu\" doesnt exist in \"main-layer\" -> LevelCell"); return;}
+        auto creatorname = menuStuff->getChildByID("creator-name");
+        if (creatorname == nullptr) {log::error("Failed to move on because \"creator-name\" doesnt exist in \"main-menu\" -> \"main-layer\" -> LevelCell"); return;}
+        else {
             auto obj = static_cast<cocos2d::CCLabelBMFont*>(creatorname->getChildren()->objectAtIndex(0));
             std::string objString(obj->getString());
             auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
+            if (this->m_compactView) {
+                if(static_cast<std::string>(GJAccountManager::get()->m_username) == objString){
+                    auto value = Mod::get()->getSettingValue<std::string>("thename");
 
-            if(static_cast<std::string>(GJAccountManager::get()->m_username) == objString.substr(3,-1)){
-                auto value = Mod::get()->getSettingValue<std::string>("thename");
+                    obj->setString(value.c_str());
+                }
+            } else {
+                if(static_cast<std::string>(GJAccountManager::get()->m_username) == objString.substr(3,-1)){
+                    auto value = Mod::get()->getSettingValue<std::string>("thename");
 
-                obj->setString(fmt::format("By {}", value).c_str());
+                    obj->setString(fmt::format("By {}", value).c_str());
+                }
             }
-
         }
 	}
 };
