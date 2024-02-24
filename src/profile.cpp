@@ -14,7 +14,7 @@ class $modify(ProfilePage) {
         if (!ProfilePage::init(accountID, ownProfile)) return false;
         log::debug("loadPageFromUserInfo() function called! Running Custom Name!");
 
-        auto isOwnProfile = (ownProfile||GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
+        auto isOwnProfile = ownProfile||(GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
 
         log::debug("Users Own Profile: {}", isOwnProfile);
 
@@ -32,7 +32,7 @@ class $modify(ProfilePage) {
         ProfilePage::loadPageFromUserInfo(user);
         log::debug("loadPageFromUserInfo() function called! Running Custom Name! (this gets called multiple times)");
 
-        auto isOwnProfile = (m_ownProfile||GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
+        auto isOwnProfile = m_ownProfile||(GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
 
         log::debug("Users Own Profile: {}", isOwnProfile);
 
