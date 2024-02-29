@@ -1,5 +1,7 @@
 # Changelog
-## 1.4.0
+## 1.4.2
+* Removed Kot as dev (STILL IN CREDITS) (for stuff)
+## 1.4.1
 * Updated Requirements! (geode: 2.0.0-beta.21 and node ids: 1.6.1)
 ## 1.4.0
 * Added Support For Level Comments (InfoLayer and CommentCell)
