@@ -12,11 +12,11 @@ class $modify(ProfilePage) {
     // Non-BetterInfo way
     bool init(int accountID, bool ownProfile) {
         if (!ProfilePage::init(accountID, ownProfile)) return false;
-        log::debug("loadPageFromUserInfo() function called! Running Custom Name!");
+        // log::debug("loadPageFromUserInfo() function called! Running Custom Name!");
 
         auto isOwnProfile = ownProfile||(GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
 
-        log::debug("Users Own Profile: {}", isOwnProfile);
+        // log::debug("Users Own Profile: {}", isOwnProfile);
 
         if (isOwnProfile && !Loader::get()->isModLoaded("cvolton.betterinfo"))
         {
@@ -30,11 +30,11 @@ class $modify(ProfilePage) {
     // BetterInfo way
     void loadPageFromUserInfo(GJUserScore* user) {
         ProfilePage::loadPageFromUserInfo(user);
-        log::debug("loadPageFromUserInfo() function called! Running Custom Name! (this gets called multiple times)");
+        // log::debug("loadPageFromUserInfo() function called! Running Custom Name! (this gets called multiple times)");
 
         auto isOwnProfile = m_ownProfile||(GJAccountManager::get()->m_username.c_str() == m_usernameLabel->getString());
 
-        log::debug("Users Own Profile: {}", isOwnProfile);
+        // log::debug("Users Own Profile: {}", isOwnProfile);
 
 		auto value = Mod::get()->getSettingValue<std::string>("thename");
 		if (Loader::get()->isModLoaded("cvolton.betterinfo") && isOwnProfile) {

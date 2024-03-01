@@ -11,7 +11,7 @@ class $modify(InfoLayer) {
 
     bool init(GJGameLevel* p0, GJUserScore* p1, GJLevelList* p2) {
         InfoLayer::init(p0,p1,p2);
-        log::debug("InfoLayer::init() function called! Running Custom Name!");
+        // log::debug("InfoLayer::init() function called! Running Custom Name!");
         
         
         auto mainObj = static_cast<cocos2d::CCLayer*>(this->getChildren()->objectAtIndex(0));

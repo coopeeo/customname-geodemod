@@ -11,7 +11,7 @@ class $modify(LevelCell) {
 
     void loadCustomLevelCell() {
         LevelCell::loadCustomLevelCell();
-        log::debug("loadCustomLevelCell() function called! Running Custom Name!");
+        // log::debug("loadCustomLevelCell() function called! Running Custom Name!");
         
         
         auto mainObj = this->getChildByID("main-layer");

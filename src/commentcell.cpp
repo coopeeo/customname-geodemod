@@ -11,7 +11,7 @@ class $modify(CommentCell) {
 
     void loadFromComment(GJComment* p0) {
         CommentCell::loadFromComment(p0);
-        log::debug("loadFromComment() function called! Running Custom Name!");
+        // log::debug("loadFromComment() function called! Running Custom Name!");
         
         
         auto mainObj = static_cast<cocos2d::CCLayer*>(this->getChildren()->objectAtIndex(1));
