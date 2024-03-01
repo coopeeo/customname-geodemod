@@ -7,8 +7,8 @@
   },
   "id": "coopeeo.customname",
   "name": "Custom Name",
-  "version": "1.4.2",
-  "developer": "Coop",
+  "version": "1.4.3",
+  "developer": "coopeeo",
   "repository": "https://github.com/coopeeo/customname-geodemod",
   "description": "Make yourself have your own name. (Only appears for yourself)",
   "issues": {
