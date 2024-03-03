@@ -5,10 +5,6 @@
 using namespace geode::prelude;
 
 class $modify(CommentCell) {
-    /*static void onModify(auto& self) {
-        self.setHookPriority("LevelBrowserLayer::updateLevelsLabel", -2);
-    }*/
-
     void loadFromComment(GJComment* p0) {
         CommentCell::loadFromComment(p0);
         // log::debug("loadFromComment() function called! Running Custom Name!");
@@ -24,6 +20,7 @@ class $modify(CommentCell) {
 
                 profilename->setString(value.c_str());
             }
+            return;
         }
         auto menuStuff = mainObj->getChildByID("main-menu");
         if (menuStuff == nullptr) {log::info("Failed to move on because \"main-menu\" doesnt exist in \"the CCLayer in CommentCell (index 1)\" -> CommentCell"); return;}
