@@ -6,7 +6,7 @@ using namespace geode::prelude;
 
 class $modify(PauseLayer) {
     static void onModify(auto& self) {
-        self.setHookPriority("PauseLayer::customSetup", -3);
+        self.setHookPriority("PauseLayer::customSetup", -100);
     }
 
     void customSetup() {
