@@ -15,7 +15,7 @@ class $modify(CommentCell) {
         
         auto mainObj = static_cast<cocos2d::CCLayer*>(this->getChildren()->objectAtIndex(1));
         if (mainObj == nullptr) {log::info("Failed to move on because \"the CCLayer in CommentCell (index 1)\" doesnt exist CommentCell"); return;}
-        auto profilename = mainObj->getChildByID("username-label");
+        auto profilename = static_cast<CCLabelBMFont*>(mainObj->getChildByID("username-label"));
         if (profilename != nullptr) {
             std::string objString(profilename->getString());
             auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
