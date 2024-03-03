@@ -15,7 +15,7 @@ class $modify(PauseLayer) {
         
         if (!Loader::get()->isModLoaded("tpdea.betterpause-Better")) return dathing;
 
-        auto mainObj = this->getChildByID("better-pause-node");
+        auto mainObj = dathing->getChildByID("better-pause-node");
         if (mainObj == nullptr) {log::info("Failed to move on because \"better-pause-node\" doesnt exist PauseLayer"); return dathing;}
         auto creatorname = mainObj->getChildByID("creator-name");
         if (creatorname == nullptr) {log::info("Failed to move on because \"creator-name\" doesnt exist in \"better-pause-node\" -> PauseLayer"); return dathing;}
