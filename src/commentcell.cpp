@@ -13,22 +13,30 @@ class $modify(CommentCell) {
         CommentCell::loadFromComment(p0);
         // log::debug("loadFromComment() function called! Running Custom Name!");
         
-        
         auto mainObj = static_cast<cocos2d::CCLayer*>(this->getChildren()->objectAtIndex(1));
         if (mainObj == nullptr) {log::info("Failed to move on because \"the CCLayer in CommentCell (index 1)\" doesnt exist CommentCell"); return;}
+        auto profilename = mainObj->getChildByID("username-label");
+        if (profilename != nullptr) {
+            std::string objString(profilename->getString());
+            auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
+            if(accountname == objString){
+                auto value = Mod::get()->getSettingValue<std::string>("thename");
+
+                profilename->setString(value.c_str());
+            }
+        }
         auto menuStuff = mainObj->getChildByID("main-menu");
         if (menuStuff == nullptr) {log::info("Failed to move on because \"main-menu\" doesnt exist in \"the CCLayer in CommentCell (index 1)\" -> CommentCell"); return;}
         auto creatorname = menuStuff->getChildByID("username-button");
         if (creatorname == nullptr) {log::info("Failed to move on because \"username-button\" doesnt exist in \"main-menu\" -> \"the CCLayer in CommentCell (index 1)\" -> CommentCell"); return;}
-        else {
-            auto obj = static_cast<cocos2d::CCLabelBMFont*>(creatorname->getChildren()->objectAtIndex(0));
-            std::string objString(obj->getString());
-            auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
-            if(static_cast<std::string>(GJAccountManager::get()->m_username) == objString){
-                auto value = Mod::get()->getSettingValue<std::string>("thename");
 
-                obj->setString(value.c_str());
-            }
+        auto obj = static_cast<cocos2d::CCLabelBMFont*>(creatorname->getChildren()->objectAtIndex(0));
+        std::string objString(obj->getString());
+        auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
+        if(static_cast<std::string>(GJAccountManager::get()->m_username) == objString){
+            auto value = Mod::get()->getSettingValue<std::string>("thename");
+
+            obj->setString(value.c_str());
         }
 	}
 };
