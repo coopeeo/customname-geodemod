@@ -6,19 +6,19 @@ using namespace geode::prelude;
 
 class $modify(PauseLayer) {
     static void onModify(auto& self) {
-        self.setHookPriority("PauseLayer::customSetup", -100);
+        self.setHookPriority("PauseLayer::create", -100);
     }
 
-    void customSetup() {
-        PauseLayer::customSetup();
+    void create(bool p0) {
+        PauseLayer::create(p0);
         // log::debug("loadFromComment() function called! Running Custom Name!");
         
-        if (!Loader::get()->isModLoaded("tpdea.betterpause-Better")) return;
+        if (!Loader::get()->isModLoaded("tpdea.betterpause-Better")) return true;
 
         auto mainObj = this->getChildByID("better-pause-node");
-        if (mainObj == nullptr) {log::info("Failed to move on because \"better-pause-node\" doesnt exist PauseLayer"); return;}
+        if (mainObj == nullptr) {log::info("Failed to move on because \"better-pause-node\" doesnt exist PauseLayer"); return true;}
         auto creatorname = mainObj->getChildByID("creator-name");
-        if (creatorname == nullptr) {log::info("Failed to move on because \"creator-name\" doesnt exist in \"better-pause-node\" -> PauseLayer"); return;}
+        if (creatorname == nullptr) {log::info("Failed to move on because \"creator-name\" doesnt exist in \"better-pause-node\" -> PauseLayer"); return true;}
 
         auto obj = static_cast<cocos2d::CCLabelBMFont*>(creatorname->getChildren()->objectAtIndex(0));
         std::string objString(obj->getString());
@@ -28,5 +28,6 @@ class $modify(PauseLayer) {
 
             obj->setString(fmt::format("By {}", value).c_str());
         }
+        return true;
 	}
 };
