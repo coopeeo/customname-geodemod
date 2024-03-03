@@ -5,9 +5,9 @@
 using namespace geode::prelude;
 
 class $modify(PauseLayer) {
-    /*static void onModify(auto& self) {
-        self.setHookPriority("LevelBrowserLayer::updateLevelsLabel", -2);
-    }*/
+    static void onModify(auto& self) {
+        self.setHookPriority("PauseLayer::customSetup", -3);
+    }
 
     void customSetup() {
         PauseLayer::customSetup();
