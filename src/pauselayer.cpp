@@ -6,7 +6,7 @@ using namespace geode::prelude;
 
 class $modify(PauseLayer) {
     static void onModify(auto& self) {
-        self.setHookPriority("PauseLayer::create", -100);
+        self.setHookPriority("PauseLayer::create", -110);
     }
 
     static PauseLayer* create(bool p0) {
@@ -20,7 +20,7 @@ class $modify(PauseLayer) {
         auto creatorname = mainObj->getChildByID("creator-name");
         if (creatorname == nullptr) {log::info("Failed to move on because \"creator-name\" doesnt exist in \"better-pause-node\" -> PauseLayer"); return dathing;}
 
-        auto obj = static_cast<cocos2d::CCLabelBMFont*>(creatorname->getChildren()->objectAtIndex(0));
+        auto obj = static_cast<cocos2d::CCLabelBMFont*>(creatorname);
         std::string objString(obj->getString());
         auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
         if(static_cast<std::string>(GJAccountManager::get()->m_username) == objString.substr(3,-1)){
