@@ -26,7 +26,7 @@ class $modify(PauseLayer) {
         if(static_cast<std::string>(GJAccountManager::get()->m_username) == objString.substr(3,-1)){
             auto value = Mod::get()->getSettingValue<std::string>("thename");
 
-            obj->setString(fmt::format("By {}", value).c_str);
+            obj->setString(fmt::format("By {}", value).c_str());
         }
 	}
 };
