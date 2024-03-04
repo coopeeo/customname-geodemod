@@ -20,7 +20,7 @@ class $modify(InfoLayer) {
         if (profilename != nullptr) {
             std::string objString(profilename->getString());
             auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
-            if(accountname == objString.substr(0,objString.length)){
+            if(accountname == objString.substr(0,objString.length())){
                 auto value = Mod::get()->getSettingValue<std::string>("thename");
 
                 profilename->setString(fmt::format("{}'s comments", value).c_str());
