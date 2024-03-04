@@ -25,7 +25,7 @@ class $modify(InfoLayer) {
 
                 profilename->setString(fmt::format("{}'s comments", value).c_str());
             }
-            return;
+            return true;
         }
         auto menuStuff = mainObj->getChildByID("main-menu");
         if (menuStuff == nullptr) {log::info("Failed to move on because \"main-menu\" doesnt exist in \"the CCLayer in InfoLayer (index 0)\" -> InfoLayer"); return true;}
