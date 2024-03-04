@@ -16,6 +16,17 @@ class $modify(InfoLayer) {
         
         auto mainObj = static_cast<cocos2d::CCLayer*>(this->getChildren()->objectAtIndex(0));
         if (mainObj == nullptr) {log::info("Failed to move on because \"the CCLayer in InfoLayer (index 0)\" doesnt exist InfoLayer"); return true;}
+        auto profilename = static_cast<CCLabelBMFont*>(mainObj->getChildByID("title-label"));
+        if (profilename != nullptr) {
+            std::string objString(profilename->getString());
+            auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
+            if(accountname == objString.substr(0,-11)){
+                auto value = Mod::get()->getSettingValue<std::string>("thename");
+
+                profilename->setString(fmt::format("{}'s comments", value).c_str());
+            }
+            return;
+        }
         auto menuStuff = mainObj->getChildByID("main-menu");
         if (menuStuff == nullptr) {log::info("Failed to move on because \"main-menu\" doesnt exist in \"the CCLayer in InfoLayer (index 0)\" -> InfoLayer"); return true;}
         auto creatorname = menuStuff->getChildByID("creator-button");
