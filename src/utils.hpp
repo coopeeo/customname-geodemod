@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <vector
+#include <vector>
 
 class Utils final {
 private:
