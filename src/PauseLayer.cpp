@@ -3,6 +3,7 @@
 #include <Geode/loader/Mod.hpp>
 #include <Geode/modify/PauseLayer.hpp>
 #include <Geode/binding/PauseLayer.hpp>
+#include <Geode/binding/GJAccountManager.hpp>
 
 using namespace geode::prelude;
 

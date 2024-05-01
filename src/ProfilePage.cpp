@@ -2,6 +2,7 @@
 #include <Geode/loader/Loader.hpp>
 #include <Geode/modify/ProfilePage.hpp>
 #include <Geode/binding/ProfilePage.hpp>
+#include <Geode/binding/GJAccountManager.hpp>
 
 using namespace geode::prelude;
 

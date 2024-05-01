@@ -1,5 +1,6 @@
 #include "utils.hpp"
 #include <Geode/loader/Loader.hpp>
+#include <Geode/loader/Mod.hpp>
 
 using namespace geode::prelude;
 
