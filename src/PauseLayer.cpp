@@ -35,7 +35,7 @@ class $modify(PauseLayer) {
 
         Utils* utils = Utils::get();
 
-        if(utils->dnInstalled() && accountname == objString.substr(3,accountname.size())){
+        if(!utils->dnInstalled() && accountname == objString.substr(3,accountname.size())){
             auto value = Mod::get()->getSettingValue<std::string>("thename");
             if (ratingtextsetting) {
                 auto split = utils->splitString(objString, " | ");
