@@ -11,11 +11,11 @@ Utils* Utils::get() {
     return sharedutils;
 }
 
-Utils::dnInstalled() {return geode::Loader::get()->isModLoaded(displayNameModID);}
-Utils::nameTransferred() {return geode::Loader::get()->isModLoaded(displayNameModID) && geode::Loader::get()->getLoadedMod(displayNameModID)->hasSavedValue("nametransferred");}
-Utils::nameTransfered() {return geode::Loader::get()->isModLoaded(displayNameModID) && geode::Loader::get()->getLoadedMod(displayNameModID)->hasSavedValue("nametransferred");}
+Utils::dnInstalled() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str());}
+Utils::nameTransferred() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str()) && geode::Loader::get()->getLoadedMod(displayNameModID.c_str())->hasSavedValue("nametransferred");}
+Utils::nameTransfered() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str()) && geode::Loader::get()->getLoadedMod(displayNameModID.c_str())->hasSavedValue("nametransferred");}
 
 Utils::Utils() {
     gamelaunch = true;
-    displayNameModID = "coopeeo.displaynames"
+    displayNameModID = "coopeeo.displaynames";
 }
