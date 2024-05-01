@@ -12,8 +12,8 @@ public:
 
     bool const& getLaunch() const {return gamelaunch;}
     void afterLaunch() {gamelaunch = false;}
-    bool const& dnInstalled();
-    bool const& nameTransferred();
-    bool const& nameTransfered();
+    bool dnInstalled();
+    bool nameTransferred();
+    bool nameTransfered();
     std::vector<std::string> splitString(const std::string& s, const std::string& delimiter);
 };
