@@ -3,7 +3,7 @@
 class Utils final {
 private:
     bool gamelaunch;
-    const std::string displayNameModID;
+    std::string displayNameModID;
     static Utils* sharedutils;
 public:
     Utils();
@@ -15,4 +15,5 @@ public:
     bool const& dnInstalled() const;
     bool const& nameTransferred() const;
     bool const& nameTransfered() const;
+    std::vector<std::string> Utils::splitString(const std::string& s, const std::string& delimiter);
 };
