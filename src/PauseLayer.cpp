@@ -37,10 +37,10 @@ class $modify(PauseLayer) {
         if(utils->dnInstalled() && accountname == objString.substr(3,accountname.size())){
             auto value = Mod::get()->getSettingValue<std::string>("thename");
             if (ratingtextsetting) {
-                auto split = utils->splitString(objString, " | ")
+                auto split = utils->splitString(objString, " | ");
                 obj->setString(fmt::format("By {} | {}", value, split[1]).c_str());
                 if (ratingiconsetting) {
-                    mainObj->getChildren()->objectAtIndex(5)->setPosition({ 87.f + obj->getContentSize().width * obj->getScale() + 10.f, cocos2d::CCDirector::sharedDirector()->getWinSize().height - 18.f });
+                    static_cast<CCNode>(mainObj->getChildren()->objectAtIndex(5))->setPosition({ 87.f + obj->getContentSize().width * obj->getScale() + 10.f, cocos2d::CCDirector::sharedDirector()->getWinSize().height - 18.f });
                 }
             } else {
                 obj->setString(fmt::format("By {}", value).c_str());
