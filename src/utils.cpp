@@ -13,6 +13,7 @@ Utils* Utils::get() {
 
 Utils::dnInstalled() {return geode::Loader::get()->isModLoaded(displayNameModID);}
 Utils::nameTransferred() {return geode::Loader::get()->isModLoaded(displayNameModID) && geode::Loader::get()->getLoadedMod(displayNameModID)->hasSavedValue("nametransferred");}
+Utils::nameTransfered() {return geode::Loader::get()->isModLoaded(displayNameModID) && geode::Loader::get()->getLoadedMod(displayNameModID)->hasSavedValue("nametransferred");}
 
 Utils::Utils() {
     gamelaunch = true;

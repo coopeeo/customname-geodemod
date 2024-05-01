@@ -14,4 +14,5 @@ public:
     void afterLaunch() {gamelaunch = false;}
     bool const& dnInstalled() const;
     bool const& nameTransferred() const;
+    bool const& nameTransfered() const;
 };
