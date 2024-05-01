@@ -40,7 +40,7 @@ class $modify(PauseLayer) {
                 auto split = utils->splitString(objString, " | ");
                 obj->setString(fmt::format("By {} | {}", value, split[1]).c_str());
                 if (ratingiconsetting) {
-                    static_cast<CCNode>(mainObj->getChildren()->objectAtIndex(5))->setPosition({ 87.f + obj->getContentSize().width * obj->getScale() + 10.f, cocos2d::CCDirector::sharedDirector()->getWinSize().height - 18.f });
+                    static_cast<CCNode*>(mainObj->getChildren()->objectAtIndex(5))->setPosition({ 87.f + obj->getContentSize().width * obj->getScale() + 10.f, cocos2d::CCDirector::sharedDirector()->getWinSize().height - 18.f });
                 }
             } else {
                 obj->setString(fmt::format("By {}", value).c_str());

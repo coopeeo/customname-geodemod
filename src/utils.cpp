@@ -11,9 +11,9 @@ Utils* Utils::get() {
     return sharedutils;
 }
 
-Utils::dnInstalled() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str());}
-Utils::nameTransferred() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str()) && geode::Loader::get()->getLoadedMod(displayNameModID.c_str())->hasSavedValue("nametransferred");}
-Utils::nameTransfered() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str()) && geode::Loader::get()->getLoadedMod(displayNameModID.c_str())->hasSavedValue("nametransferred");}
+bool Utils::dnInstalled() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str());}
+bool Utils::nameTransferred() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str()) && geode::Loader::get()->getLoadedMod(displayNameModID.c_str())->hasSavedValue("nametransferred");}
+bool Utils::nameTransfered() {return geode::Loader::get()->isModLoaded(displayNameModID.c_str()) && geode::Loader::get()->getLoadedMod(displayNameModID.c_str())->hasSavedValue("nametransferred");}
 
 std::vector<std::string> Utils::splitString(const std::string& s, const std::string& delimiter) {
     std::vector<std::string> tokens;
