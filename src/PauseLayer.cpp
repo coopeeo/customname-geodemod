@@ -16,7 +16,9 @@ class $modify(PauseLayer) {
         
         if (!Loader::get()->isModLoaded("tpdea.betterpause-Better")) return dathing;
 
-        
+        Mod* betterpause = Loader::get()->getLoadedMod("tpdea.betterpause-Better");
+        bool ratingtextsetting = !betterpause->getSettingValue<bool>("disable-rating-plus-label");
+        bool ratingiconsetting = !betterpause->getSettingValue<bool>("disable-icon-rating-plus-label");
 
         auto mainObj = dathing->getChildByID("better-pause-node");
         if (mainObj == nullptr) {log::info("Failed to move on because \"better-pause-node\" doesnt exist PauseLayer"); return dathing;}
@@ -32,10 +34,17 @@ class $modify(PauseLayer) {
 
         Utils* utils = Utils::get();
 
-        if(utils->dnInstalled() && accountname == objString.substr(3,-1)){
+        if(utils->dnInstalled() && accountname == objString.substr(3,accountname.size())){
             auto value = Mod::get()->getSettingValue<std::string>("thename");
-
-            obj->setString(fmt::format("By {} | ", value).c_str());
+            if (ratingtextsetting) {
+                auto split = utils->splitString(objString, " | ")
+                obj->setString(fmt::format("By {} | {}", value, split[1]).c_str());
+                if (ratingiconsetting) {
+                    mainObj->getChildren()->objectAtIndex(5)->setPosition({ 87.f + obj->getContentSize().width * obj->getScale() + 10.f, cocos2d::CCDirector::sharedDirector()->getWinSize().height - 18.f });
+                }
+            } else {
+                obj->setString(fmt::format("By {}", value).c_str());
+            }
         }
         return dathing;
 	}
