@@ -1,6 +1,8 @@
 #include "utils.hpp"
 #include <Geode/loader/Loader.hpp>
 
+using namespace geode::prelude;
+
 Utils* Utils::sharedutils = nullptr;
 
 Utils* Utils::get() {
