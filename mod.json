@@ -3,11 +3,12 @@
   "gd": {
     "android": "2.205",
     "win": "2.204",
-    "mac": "2.200"
+    "mac": "2.200",
+    "ios": "2.205"
   },
   "id": "coopeeo.customname",
   "name": "Custom Name",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "developer": "Cooper",
   "repository": "https://github.com/coopeeo/customname-geodemod",
   "description": "Make yourself have your own name. (Only appears for yourself)",
