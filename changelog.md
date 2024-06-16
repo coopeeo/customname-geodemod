@@ -1,6 +1,9 @@
 # Changelog
+## 1.5.3
+* Make compatible with GD 2.206
+* Removed platform support for iOS
 ## 1.5.2
-* Add support ??? platform
+* Added platform support for iOS
 * Fixed BetterPause support
 ## 1.5.1
 * Add support for comment button thingy
