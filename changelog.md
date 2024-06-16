@@ -1,6 +1,7 @@
 # Changelog
 ## 1.5.3
 * Make compatible with GD 2.206
+* Removed PauseLayer (for betterpause mod) (because no bindings!)
 * Removed platform support for iOS
 ## 1.5.2
 * Added platform support for iOS
