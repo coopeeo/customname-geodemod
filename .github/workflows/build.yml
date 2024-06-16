@@ -32,6 +32,7 @@ jobs:
 
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
+    if: ${{ !endsWith(github.event.head_commit.message, '--nobuild') }}
 
     steps:
       - uses: actions/checkout@v3
@@ -39,7 +40,6 @@ jobs:
       - name: Build the mod
         #uses: RoootTheFox/build-geode-mod@main
         uses: geode-sdk/build-geode-mod@main
-        if: ${{ !endsWith(github.event.head_commit.message, '--nobuild') }}
         with:
           combine: true
           sdk: nightly
@@ -49,6 +49,7 @@ jobs:
     name: Package builds
     runs-on: ubuntu-latest
     needs: ['build']
+    if: ${{ !endsWith(github.event.head_commit.message, '--nobuild') }}
 
     steps:
       #- uses: RoootTheFox/build-geode-mod/combine@main
