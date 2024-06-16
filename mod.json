@@ -10,6 +10,11 @@
   "version": "1.5.3",
   "developer": "Cooper",
   "repository": "https://github.com/coopeeo/customname-geodemod",
+  "links": {
+    "community": "https://discord.com/invite/dDU5furFHk",
+		"homepage": "https://coopeeo.xyz",
+		"source": "https://github.com/coopeeo/customname-geodemod/"
+  },
   "description": "Make yourself have your own name. (Only appears for yourself)",
   "issues": {
     "info": "GitHub",
