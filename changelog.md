@@ -1,4 +1,6 @@
 # Changelog
+## 1.5.4
+* Quick bug fix with BetterInfo
 ## 1.5.3
 * Make compatible with GD 2.206
 * Removed PauseLayer (for betterpause mod) (because no bindings on windows!)
