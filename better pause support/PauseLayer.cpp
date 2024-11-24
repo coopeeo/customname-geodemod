@@ -1,4 +1,3 @@
-#include "utils.hpp"
 #include <Geode/Geode.hpp>
 #include <Geode/loader/Mod.hpp>
 #include <Geode/modify/PauseLayer.hpp>
@@ -33,9 +32,7 @@ class $modify(PauseLayer) {
 
         auto accountname = static_cast<std::string>(GJAccountManager::get()->m_username);
 
-        Utils* utils = Utils::get();
-
-        if(!utils->dnInstalled() && accountname == objString.substr(3,accountname.size())){
+        if(accountname == objString.substr(3,accountname.size())){
             auto value = Mod::get()->getSettingValue<std::string>("thename");
             if (ratingtextsetting) {
                 auto split = utils->splitString(objString, " | ");
@@ -47,6 +44,7 @@ class $modify(PauseLayer) {
                 obj->setString(fmt::format("By {}", value).c_str());
             }
         }
+        
         return dathing;
 	}
 };

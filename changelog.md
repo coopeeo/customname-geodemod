@@ -1,4 +1,7 @@
 # Changelog
+## 1.5.6
+* Update to Geode v4 and GD 2.2074
+* other fixes
 ## 1.5.4
 * Quick bug fix with BetterInfo
 ## 1.5.3

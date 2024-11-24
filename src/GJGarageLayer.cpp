@@ -1,4 +1,3 @@
-#include "utils.hpp"
 #include <Geode/Geode.hpp>
 #include <Geode/modify/GJGarageLayer.hpp>
 
@@ -9,12 +8,9 @@ class $modify(GJGarageLayer) {
 	    if(!GJGarageLayer::init())
             return false;
 
-		Utils* utils = Utils::get();
+		auto value = Mod::get()->getSettingValue<std::string>("thename");
+		static_cast<cocos2d::CCTextFieldTTF*>(this->getChildByID("username-label")->getChildren()->objectAtIndex(0))->setString(value.c_str());
 
-		if (!utils->dnInstalled()) {
-			auto value = Mod::get()->getSettingValue<std::string>("thename");
-			static_cast<cocos2d::CCTextFieldTTF*>(this->getChildByID("username-label")->getChildren()->objectAtIndex(0))->setString(value.c_str());
-		}
 		return true;
 	}
 };
